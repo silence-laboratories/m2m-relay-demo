@@ -2,6 +2,7 @@
 name = "m2m-relay-svc"
 version = "0.0.0"
 edition = "2021"
+license-file ="../LICENSE"
 
 [dependencies]
 sl-mpc-mate = {version = "1.0.0-beta", features = ["simple-relay"]}
