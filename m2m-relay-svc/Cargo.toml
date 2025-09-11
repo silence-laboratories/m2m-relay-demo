@@ -4,9 +4,7 @@ version = "0.0.0"
 edition = "2021"
 
 [dependencies]
-msg-relay-client = { workspace = true }
-
-sl-messages = { workspace = true }
+sl-mpc-mate = {version = "1.0.0-beta", features = ["simple-relay"]}
 
 anyhow = { workspace = true }
 axum = { workspace = true, features = [ "ws", "tokio", "http1" ] }

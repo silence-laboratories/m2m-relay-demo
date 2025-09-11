@@ -11,7 +11,7 @@ use axum::{
     response::Response,
 };
 
-use sl_messages::relay::Relay;
+use futures_util::{SinkExt, StreamExt};
 
 use crate::Inner;
 
@@ -33,16 +33,10 @@ pub async fn handler(
                 msg = socket.recv() => {
                     match msg {
                         None => break,
-                        // instance_id, setup msg
                         Some(Ok(Message::Binary(msg))) => {
-                            let _ = conn.send(msg).await;
+                            println!("relay recv binary msg: {:?}", msg.len());
+                            let _ = conn.send(msg.to_vec()).await;
                         }
-                        
-                        // p1 send vk to p2
-                        // Some(Ok(Message::Text(msg))) => {
-                        //     println!("recv text msg: {msg}");
-                        //     let _ = conn.send(msg.into()).await;
-                        // }
 
                         Some(Ok(Message::Close(_))) => {
                             tracing::debug!("recv close from the client");

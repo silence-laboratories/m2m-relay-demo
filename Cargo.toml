@@ -2,9 +2,6 @@
 members = ["m2m-relay-svc"]
 
 [workspace.dependencies]
-msg-relay-client = { git = "https://github.com/silence-laboratories/dkls23-rs.git", rev = "163e24bce74dba849428a1c2beac2ca4ee1bf9f9" }
-sl-messages = { git = "https://github.com/silence-laboratories/sl-crypto.git", rev = "a83f686" }
-
 anyhow = "1"
 axum = { version = "0.8.4", features = ["ws", "tokio", "http1"] }
 futures-util = { version = "0.3.30", default-features = false }

@@ -7,7 +7,7 @@ use tokio::{
 };
 use tower_http::{cors::CorsLayer, trace::TraceLayer};
 
-use sl_messages::relay::SimpleMessageRelay;
+use sl_mpc_mate::coord::SimpleMessageRelay;
 
 pub mod flags;
 mod web;
