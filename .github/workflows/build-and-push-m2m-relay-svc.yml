@@ -2,10 +2,10 @@ name: Build and Push m2m-relay-svc Docker Image
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ docker-ghcr ]
     tags: [ 'v*' ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ docker-ghcr ]
   workflow_dispatch: {}
 
 env:
